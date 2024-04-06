@@ -22,20 +22,23 @@ const io = new Server(server, {
 io.on('connection', (socket) => {
     console.log('User connected ' + socket.id);
     console.log(socket.data);
+    socket.on('send_message', (data) => {
+        const { username, room} = data;    
+        io.in(room).emit('receive_message', data); // Send to all users in room, including sender
+      });
     socket.on('join_room', (data) => {
         console.log(data);
         const { username, room} = data;
         socket.join(room);
 
         let __createdtime__ = Date.now();
-
         socket.to(room).emit('receive_message', {
             message: username + ' has joined the chat room',
             username: CHAT_BOT,
             __createdtime__,
         });
 
-        socket.emit('recieve message', {
+        socket.emit('receive_message', {
             message: 'welcome ' + username,
             username: CHAT_BOT,
             __createdtime__, 
