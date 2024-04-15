@@ -9,7 +9,7 @@ import io from 'socket.io-client';
 import Home from './pages/home';
 import Chat from './pages/chat';
 
-const socket = io.connect('http://localhost:10000');
+const socket = io.connect(process.env.PORT);
 
 function App() {
   const [username, setUsername] = useState('');
