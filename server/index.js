@@ -14,7 +14,7 @@ let allUsers = [];
 
 const io = new Server(server, {
     cors: {
-        origin: ['http://localhost:3000', 'http://localhost:4000'],
+        origin: ['http://localhost:3000', 'http://localhost:10000'],
         methods: ['GET', 'POST'],
     },
 });
@@ -51,4 +51,4 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(4000, () => 'Server is running on port 3000');
+server.listen(10000, () => 'Server is running on port 10000');
