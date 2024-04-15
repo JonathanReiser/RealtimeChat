@@ -52,4 +52,4 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(port, () => 'Server is running on port 10000');
+server.listen(port, () => 'Server is running on port ' + port);
