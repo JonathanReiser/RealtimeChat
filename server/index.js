@@ -15,7 +15,7 @@ let allUsers = [];
 
 const io = new Server(server, {
     cors: {
-        origin: ['http://localhost:3000', 'http://localhost:' + port],
+        origin: ['https://realtimechat1-2.onrender.com:10000', 'http://realtimechat-1-8k2g.onrender.com:' + port],
         methods: ['GET', 'POST'],
     },
 });
