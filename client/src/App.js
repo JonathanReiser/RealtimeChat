@@ -9,7 +9,7 @@ import io from 'socket.io-client';
 import Home from './pages/home';
 import Chat from './pages/chat';
 
-const socket = io.connect(process.env.PORT);
+const socket = io.connect('realtimechat-2.onrender.com:10000');
 
 function App() {
   const [username, setUsername] = useState('');

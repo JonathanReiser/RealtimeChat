@@ -15,13 +15,11 @@ let allUsers = [];
 
 const io = new Server(server, {
     cors: {
-        origin: ['https://35.160.120.126:10000', 'http://35.160.120.126:' + port],
+        origin: 'https://realtimechat-1-8k2g.onrender.com',
         methods: ['GET', 'POST'],
     },
 });
-35.160.120.126
-44.233.151.27
-34.211.200.85
+
 io.on('connection', (socket) => {
     console.log('User connected ' + socket.id);
     console.log(socket.data);
