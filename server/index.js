@@ -52,4 +52,4 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(port, () => 'Server is running on port ' + port);
+server.listen('0.0.0.0');
